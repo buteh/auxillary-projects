@@ -23,9 +23,9 @@ Do we need Ansible? Why
 * Another place to modify is /etc/host file: sudo vi /etc/hosts
 * Edit the host name eg: Ansible-controller
 
-![Host Name File](auxillary-projects/images/ansible//hostname_shot.png)
+![Host Name File](images/ansible/hostname_shot.png)
 
-![Hosts File](auxillary-projects/images/ansible//hosts_shot.png)
+![Hosts File](images/ansible/hosts_shot.png)
 
 * Restart your system: shutdown now -r
 * Repeat the same step for Ansible-target-1, Ansible-target-2
