@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
           steps {
             echo 'Testing the application'
-            echo '"Printing JDK path " + ${JDKPath}'
+            echo '"Printing JDK path  + ${JDKPath}"'
           }
         }
 
