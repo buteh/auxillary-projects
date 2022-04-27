@@ -25,4 +25,7 @@ pipeline {
     }
 
   }
+  environment {
+    JDKPath = '/Library/Java/JavaVirtualMachines/sapmachine-jdk-11.0.11.jdk/Contents/Home'
+  }
 }
