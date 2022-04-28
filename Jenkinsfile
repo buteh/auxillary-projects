@@ -27,7 +27,11 @@ pipeline {
 
     stage('Deploy') {
       parallel {
+        when{
+            branch 'master'
+          }
         stage('Deploy') {
+          
           steps {
             input(message: 'Do you want to still deploy ?', id: 'OK')
             echo 'Deploying the app on a server'
