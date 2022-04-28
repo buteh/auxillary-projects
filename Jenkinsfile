@@ -27,9 +27,6 @@ pipeline {
 
     stage('Deploy') {
       parallel {
-        when{
-            branch 'master'
-          }
         stage('Deploy') {
           
           steps {
@@ -43,7 +40,6 @@ pipeline {
             archiveArtifacts 'Logtextfile.txt'
           }
         }
-
       }
     }
 
