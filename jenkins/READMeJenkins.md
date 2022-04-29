@@ -143,7 +143,17 @@ This is a tool for running multiple container docker applications. You use a com
     - 1025:25 is used to forward the smtp server to port 25.
     - djfarrelly/maildev is the container name
 
+* 
 
+## Pipeline as a code
+* This is maintained in a source code repo which is different from the traditional freestyle job with config file.
+
+* Code must contain a file names Jenkinsfile in its root directory
+
+* lts: Long time support
+* Pipeline as code can be written in two ways:
+    1. Declarative pipelines
+    2. Scripted pipelines.
 ## Issues faced
 * I ran into issues building using the pipeline option as it could not locate mvn. Even though it was configured on jenkins. This was fixed by specifying the bin directory which is where mvn is located in the maven directory. Command is in section *Setting up a build pipeline*
 
