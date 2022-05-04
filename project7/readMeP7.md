@@ -70,6 +70,15 @@
     - sudo vi /etc/fstab (To make sure that these changes remain on the webserver after reboot edit file and paste below):
     172.31.25.111:/mnt/apps /var/www nfs defaults 0 0
     - Run steps in guide
+        1. sudo yum install httpd -y
+        2. sudo dnf install https://dl.fedoraproject.   org/pub/epel/epel-release-latest-8.noarch.rpm
+        3. sudo dnf install dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+        4. sudo dnf module reset php
+        5. sudo dnf module enable php:remi-7.4
+        6. sudo dnf install php php-opcache php-gd php-curl php-mysqlnd
+        7. sudo systemctl start php-fpm
+        8. sudo systemctl enable php-fpm
+        9. sudo setsebool -P httpd_execmem 1
     - sudo mount -t nfs -o rw,nosuid 172.31.25.111:/mnt/logs /var/log/httpd (Mount the apache log folder on the logs folder in the NFS server)
     - sudo vi /etc/fstab (For same reason as above, paste command: 172.31.25.111:/mnt/logs /var/www nfs defaults 0 0)
     - sudo yum install git
@@ -81,6 +90,11 @@
     - sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf (This has to be done on the DB server and set binding address to 0.0.0.0)
     - sudo systemctl restart mysql (DB server)
     - mysql -h 172.31.26.75 -u webaccess -p tooling < tooling-db.sql (Ran from the tooling directory, to run the script on the DB)
+    - sudo mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.backup (changing the default home page)
+    - sudo chmod 777 /var/www/html
+    - sudo setenforce 0
+    - sudo vi /etc/sysconfig/selinux
+        (SELINUX=disabled)
     - curl -v localhost (This is used to check if the webserver is working)
     ```
 
