@@ -83,7 +83,7 @@
     - sudo vi /etc/fstab (For same reason as above, paste command: 172.31.25.111:/mnt/logs /var/www nfs defaults 0 0)
     - sudo yum install git
     - git clone https://github.com/darey-io/tooling.git
-    - sudo cp -r tooling/html/* /var/www/html/ (Copy all files in the tooling folder cloned into the /var/ww/html folder)
+    - sudo cp -r tooling/html/* /var/www/html/ (Copy all files in the tooling folder cloned into the /var/www/html folder)
     - sudo vi /var/www/html/functions.php (update the config with the DB username and password and private IP address)
     - mysql -h 172.31.26.75 -u webaccess -p tooling < tooling-db.sql (To connect to the remote DB server but note this will fail cos the mysql tooling has not been installed yet )
     - sudo yum install mysql -y
