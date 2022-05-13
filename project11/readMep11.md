@@ -22,3 +22,43 @@ INSTALL THE JENKINS SERVER
 * Create a webhook in Jenkins and put in the url of git hub with a *github-webhook* suffix. (example: http://34.235.88.172:8080/github-webhook/)
 * Screen shot below:
 ![Webhook Set Up](/images/proj11/webhook-setup.png)
+* From the jenkins server
+    - cd /var/lib/jenkins/jobs/ansible/builds/3/archive/
+    - cat README.md
+    (Shows the change that we made).
+* On visual studio code install *Remote Development* pack.
+* Restart VS code after installing a
+plugging.
+* Clone repository created in github in VS code
+* Then run the following commands below
+```
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ git checkout -b prj-11
+Switched to a new branch 'prj-11'
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ mkdir playbooks
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ ls
+LICENSE         README.md       playbooks
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ mkdir inventory
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ ls -lart
+total 16
+drwxr-xr-x   4 omon  staff   128 13 May 07:57 ..
+-rw-r--r--   1 omon  staff  1062 13 May 07:57 LICENSE
+-rw-r--r--   1 omon  staff    72 13 May 07:57 README.md
+drwxr-xr-x  13 omon  staff   416 13 May 08:11 .git
+drwxr-xr-x   2 omon  staff    64 13 May 08:12 playbooks
+drwxr-xr-x   2 omon  staff    64 13 May 08:12 inventory
+drwxr-xr-x   7 omon  staff   224 13 May 08:12 .
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ touch playbooks/common.yml
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ touch inventory/dev.yml
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ touch inventory/staging.yml
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ touch inventory/uat.yml
+Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ touch inventory/prod.yml
+```
+* The commmands above have created a new branch called *prj-11*, created two directories *inventory* and *playbooks* and created config files in both directories.
+![VS Code](/images/proj11/vscode-setup.png)
+
+
