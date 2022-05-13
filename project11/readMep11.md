@@ -69,8 +69,8 @@ Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ touch inventory/prod.yml
     - sudo vi /etc/hostname
     - sudo reboot
     - Example below:
-    ![Hosts file](/images/proj11/setservername1)
-    ![HostName file](/images/proj11/setservername2)
+    ![Hosts file](/images/proj11/setservername1.png)
+    ![HostName file](/images/proj11/setservername2.png)
 
 * On all target machines
     * cd .ssh
