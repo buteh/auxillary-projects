@@ -9,6 +9,7 @@
 - sudo apt update
 - sudo apt install ansible (Install ansible)
 - sudo apt install default-jdk-headless (jdk is a prerequisite for jenkins download)
+
 INSTALL THE JENKINS SERVER
 - wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -  (This adds the repositories keys to the system and this should return with OK)
 - sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list' (This append the Debian package repository address to the server’s sources.list:)
@@ -60,5 +61,23 @@ Omoaregbas-MacBook-Pro-2:ansible-config-mgt omon$ touch inventory/prod.yml
 ```
 * The commmands above have created a new branch called *prj-11*, created two directories *inventory* and *playbooks* and created config files in both directories.
 ![VS Code](/images/proj11/vscode-setup.png)
+* On jenkins/ansible server generate public keys:
+    - ssh-keygen (This will generate the keys in ~/.ssh/ folder).
+* Created 5 servers 2 RedHat Webservers, 1 RedHat DB server, 1 RedHat NFS server and 1 Ubuntu Load balancer.
+* Name each server respectively
+    - sudo vi /etc/hosts
+    - sudo vi /etc/hostname
+    - sudo reboot
+    - Example below:
+    ![Hosts file](/images/proj11/setservername1)
+    ![HostName file](/images/proj11/setservername2)
+
+* On all target machines
+    * cd .ssh
+    * ls (There should be authorized_keys)
+    * sudo vi authorized_keys
+    * Paste the key from the id_rsa.pub above to this location and save.
+
+
 
 
