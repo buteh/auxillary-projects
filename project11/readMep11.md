@@ -20,5 +20,5 @@ INSTALL THE JENKINS SERVER
 * Create a new free style project and call is ansible-config-mgt
 * **WEBHOOK:** Please note that a webhook is set in a repo to allow external services to be notified when certain events happen. When the specific event happens, github will send a post event to each url specified.
 * Create a webhook in Jenkins and put in the url of git hub with a *github-webhook* suffix. (example: http://34.235.88.172:8080/github-webhook/)
-Screen shot below:
-![Webhook Set Up](/images/proj11/webhook-setup)
+* Screen shot below:
+![Webhook Set Up](images/proj11/webhook-setup)
